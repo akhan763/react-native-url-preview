@@ -1,8 +1,8 @@
 import React from 'react';
 import {getLinkPreview} from 'link-preview-js';
 import PropTypes from 'prop-types';
-import {Image, Linking, Platform, Text, TouchableOpacity, View, ViewPropTypes} from 'react-native';
-
+import {Image, Linking, Platform, Text, TouchableOpacity, View} from 'react-native';
+import {ViewPropTypes} from 'deprecated-react-native-prop-types'
 const REGEX = /[-a-zA-Z0-9@:%_\+.~#?&//=]{2,256}\.[a-z]{2,4}\b(\/[-a-zA-Z0-9@:%_\+.~#?&//=]*)?/g;
 
 export default class RNUrlPreview extends React.PureComponent {
@@ -202,10 +202,10 @@ RNUrlPreview.propTypes = {
   textContainerStyle: ViewPropTypes ? ViewPropTypes.style : PropTypes.object,
   title: PropTypes.bool,
   description: PropTypes.bool,
-  titleStyle: Text.propTypes ? Text.propTypes.style : PropTypes.object,
-  titleNumberOfLines: Text.propTypes ? Text.propTypes.numberOfLines : PropTypes.number,
-  descriptionStyle: Text.propTypes ? Text.propTypes.style : PropTypes.object,
-  descriptionNumberOfLines: Text.propTypes ? Text.propTypes.numberOfLines : PropTypes.number,
+  titleStyle:ViewPropTypes ? ViewPropTypes.style : PropTypes.object,
+  titleNumberOfLines: ViewPropTypes ? ViewPropTypes.numberOfLines : PropTypes.number,
+  descriptionStyle: ViewPropTypes ? ViewPropTypes.style : PropTypes.object,
+  descriptionNumberOfLines: ViewPropTypes ? ViewPropTypes.numberOfLines : PropTypes.number,
   requestOptions: PropTypes.shape({
     headers: PropTypes.objectOf(PropTypes.string),
     imagesPropertyType: PropTypes.string,
